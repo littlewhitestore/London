@@ -67,6 +67,23 @@ swiper-container {
 .b-left{
   width: 186rpx;
   background-color: rgba(250, 251, 252, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.b-left-font{
+margin: 19rpx 0;
+ font-size: 13px;
+ color: #fb3f34;
+}
+.b-left-dec{
+  margin-bottom: 50rpx;
+ font-size: 12px;
+ color: #979fa7;
+}
+.b-left-img{
+ width: 161rpx;
+ height: 172rpx;
 }
 .b-right{
   display: flex;
@@ -79,7 +96,29 @@ swiper-container {
 }
 .b-right-top{
   height: 160rpx;
-  background-color: red;
+  background-color: rgba(250, 251, 252, 0.5);
+  display: flex;
+  flex-direction: row;
+  
+}
+.b-right-top-l{
+display: flex;
+flex-direction: column;
+align-items: center;
+
+
+
+}
+.b-r-t-l-font{
+  color: #fb3f34;
+  font-size: 13px;
+   margin:19rpx 0;
+  
+
+}
+.b-r-t-l-font2{
+ color: #979fa7;
+ font-size: 12px;
 }
 .b-right-bottom{
   height: 160rpx;

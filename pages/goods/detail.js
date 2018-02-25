@@ -4,8 +4,13 @@ var util = require("../../utils/util.js");
 var app = getApp();
 //goods/detail.js
 Page({
+
   firstIndex: -1,
   data: {
+    msgList: [
+      { name:"张三" , },
+      { name: "李四", },
+      { name: "王五", }],
     bannerApp: true,
     winWidth: 0,
     winHeight: 0,
@@ -28,6 +33,9 @@ Page({
     curSkuPrice:"",
     curSkuAttr: " "
   },
+
+
+
   // backshop:function(e){
   //   console.adlog(e)
   //   wx.navigateTo({
@@ -36,9 +44,40 @@ Page({
   //   commodityAttr: [],
   //   attrValueList: []
   // },
+  bindChange: function (e) {
 
+    var that = this;
+    that.setData({ currentTab: e.detail.current });
+
+  },
+  /** 
+   * 点击tab切换 
+   */
+  swichNav: function (e) {
+
+    var that = this;
+
+    if (this.data.currentTab === e.target.dataset.current) {
+      return false;
+    } else {
+      that.setData({
+        currentTab: e.target.dataset.current
+      })
+    }
+  } ,
   // 传值
   onLoad: function (option) {
+    var that=this;
+    wx.getSystemInfo({
+
+      success: function (res) {
+        that.setData({
+          winWidth: res.windowWidth,
+          winHeight: res.windowHeight
+        });
+      }
+
+    });  
     console.log(option)
     this.loadData(option)
   },

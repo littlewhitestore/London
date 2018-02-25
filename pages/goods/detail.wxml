@@ -18,15 +18,21 @@
     </view>
   </view>
 
-  <view class="title">{{goods_info.goods_name}}</view>
-  <view class="fb_r ">
+
+  <view class="fb_r mt_10">
     <view class="price">￥{{goods_info.goods_price}}</view>
     <view class="oldprice">
       <text style="text-decoration:line-through">￥{{goods_info.market_price}}</text>
     </view>
     <!-- <view class="postage">免邮费</view> -->
   </view>
-
+  <view class="fb_r mt_10">
+    <view class='tyi'>已团87983件</view>
+    <view class="o"></view>
+    <view class='tnum'>2人团</view>
+  </view>
+  <view class="line"> </view>
+  <view class="title">{{goods_info.goods_name}}</view>
 
 
   <view class="gmxx">
@@ -37,8 +43,8 @@
 
       <!-- <form bindsubmit="formSubmit" bindreset="formReset" report-submit='true' >
         <button class="o_h_btn font_12" formType="submit" type='testType+{{index}}'> -->
-            <view style='color: #979fa7;'>{{item.desc}}</view>
-        <!-- </button> -->
+      <view style='color: #979fa7;'>{{item.desc}}</view>
+      <!-- </button> -->
       <!-- </form> -->
 
     </view>
@@ -51,24 +57,127 @@
     </view>
   </view>
 
-  <view class="font">商品详情</view>
+  <view class='font'>正在拼团，可直接参与</view>
+  <view class='border'></view>
+  <view>
+    <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
+      <block wx:for="{{msgList}}">
+
+        <swiper-item>
+          <view class='kt'>
+            <view class='ktleft'>
+              <view class='ktimg'></view>
+              <view class='ktname'>{{item.name}}</view>
+            </view>
+            <view class='ktright'>
+              <view class='ktrt'>
+                <view class='ktren'>还差1人拼成</view>
+                <view class='kttime'>剩余时间23：23：19</view>
+              </view>
+              <view class='ktbtn'>立即参团</view>
+            </view>
+          </view>
+
+        </swiper-item>
+
+      </block>
+    </swiper>
+  </view>
+
+  <view class="base"> </view>
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">商品详情</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">买家评论</view>
+  </view>
+
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+
+    <swiper-item>
+      <view>
+        <view class="info">
+
+          <view wx:for="{{detailImageList}}">
+            <view>
+              <image src="{{item}}" mode="widthFix" style="width:375px" />
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </swiper-item>
+
+    <swiper-item>
+      <view>
+        <view class="plline"></view>
+        <view class="pl">
+          <view class='leftline'></view>
+          <view class='middle'>买家评论</view>
+          <view class='rightline'></view>
+        </view>
+
+        <view class='mjpl'>
+          <view class='mjpl-left'>
+            <view class='mjimg'></view>
+          </view>
+
+          <view class='mjpl-right'>
+            <view class='mjname'>清凉一夏</view>
+            <view class='mjbuy'>来自 清凉一夏 下单成功</view>
+            <view class='mjtime'> 2018-01-31</view>
+          </view>
+        </view>
+        <view class='mjpl'>
+          <view class='mjpl-left'>
+            <view class='mjimg'></view>
+          </view>
+
+          <view class='mjpl-right'>
+            <view class='mjname'>清凉一夏</view>
+            <view class='mjbuy'>来自 清凉一夏 下单成功</view>
+            <view class='mjtime'> 2018-01-31</view>
+          </view>
+        </view>
+        <view class='mjpl'>
+          <view class='mjpl-left'>
+            <view class='mjimg'></view>
+          </view>
+
+          <view class='mjpl-right'>
+            <view class='mjname'>清凉一夏</view>
+            <view class='mjbuy'>来自 清凉一夏 下单成功</view>
+            <view class='mjtime'> 2018-01-31</view>
+          </view>
+        </view>
+        <view class='mjpl'>
+          <view class='mjpl-left'>
+            <view class='mjimg'></view>
+          </view>
+
+          <view class='mjpl-right'>
+            <view class='mjname'>清凉一夏</view>
+            <view class='mjbuy'>来自 清凉一夏 下单成功</view>
+            <view class='mjtime'> 2018-01-31</view>
+          </view>
+        </view>
+
+   
+      </view>
+    </swiper-item>
+
+  </swiper>
+
+
+
   <!-- <view class="line">
     <view class="liner"></view>
   </view> -->
-  <view class="info">
 
-    <view wx:for="{{detailImageList}}">
-      <view>
-        <image src="{{item}}" mode="widthFix" style="width:375px" />
-      </view>
-    </view>
-
-  </view>
 
 </view>
+<view class="space"></view>
 <view class="footfixed tc">
 
-  <view class="b_t fl_l w45 font_12 hui03 df">
+  <view class="b_t fl_l w30 font_12 hui03 df">
     <view class="df_1 l_h15 pt5 bre">
 
 
@@ -87,16 +196,25 @@
       <view class="dbtext">客服</view>
 
     </view>
-    <button class=" btshare df_1 l_h15 pt5" open-type="share">
+    <!-- <button class=" btshare df_1 l_h15 pt5" open-type="share">
 
       <image class="icon_kf" src="/images/icons/share-detail.png"></image>
       <view class="dbtext" style='margin-top:6rpx'>分享</view>
-    </button>
+    </button> -->
   </view>
-  <view class="fl_l w55 b1">
+  <view class="fl_l w70 b1">
     <!-- <view class="w50 fl_l bg_cheng white" bindtap="addShopCart" data-type="addcart">加入购物车</view> -->
 
-    <view class="bg_btn white w100 fl_l" bindtap="{{ goods_info.sku_list.length == 1 ? 'gobuy' :'setModalStatus'}}" data-status="1">立即抢购</view>
+    <view class="bg_btn white w100 fl_l fr" bindtap="{{ goods_info.sku_list.length == 1 ? 'gobuy' :'setModalStatus'}}" data-status="1">
+      <view class="w45 dubuy p7">
+        <view>￥90</view>
+        <view>单独购买</view>
+      </view>
+      <view class="w55 tuanbuy p7">
+        <view>￥80</view>
+        <view>邀请好友开团</view>
+      </view>
+    </view>
   </view>
 </view>
 
@@ -118,21 +236,21 @@
 
     <view class="dec">
       <view class="deci">{{arr1[0].key}}</view>
-      <view class="decd"  >
+      <view class="decd">
 
-        <view wx:for="{{arr1}}" data-id="{{item.id}}" catchtap='click1'  class="deca {{item.btn_class}}">{{item.value}}</view>
+        <view wx:for="{{arr1}}" data-id="{{item.id}}" catchtap='click1' class="deca {{item.btn_class}}">{{item.value}}</view>
 
-              
+
       </view>
 
     </view>
-   
+
     <view class='eline2'></view>
 
     <view class="dec">
       <view class="deci">{{arr2[0].key}}</view>
       <view class="decd">
-        <view   wx:for="{{arr2}}"  data-id="{{item.id}}" class=" decb {{item.btn_class}}"  catchtap='click2' >{{item.value}}</view>
+        <view wx:for="{{arr2}}" data-id="{{item.id}}" class=" decb {{item.btn_class}}" catchtap='click2'>{{item.value}}</view>
 
 
       </view>
@@ -155,7 +273,7 @@
         </view>
       </view>
     </view>
-           
+
     <view class="footc" bindtap="gobuy" data-type="buynow" data-status="1">
       立即购买
     </view>

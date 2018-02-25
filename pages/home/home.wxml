@@ -30,9 +30,20 @@
   </view>
 
   <view class='b-all'>
-    <view class='b-left'></view>
+    <view class='b-left'>
+    <view class='b-left-font'>妈妈的爱</view>
+       <view class='b-left-dec'>精选爆款单品</view>
+          <view ><image  class='b-left-img' src="../../images/icons/activity-mamilove.png"></image></view>
+    </view>
     <view class='b-right'>
-      <view class='b-right-top'></view>
+      <view class='b-right-top'>
+      <view class='b-right-top-l'>
+      <view class='b-r-t-l-font'>吃货专场</view>
+      <view class='b-r-t-l-font2'>上班族来拼团</view>
+      <view class='b-r-t-l-font2'>抵抗饥饿</view>
+      </view>
+      <view class='b-right-top-r'></view>
+      </view>
       <view class='b-right-bottom'>
         <view class='b-right-bottom-left'></view>
         <view class='b-right-bottom-right'></view>
