@@ -9,13 +9,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.6.6",
-<<<<<<< HEAD
 	"appid": "wx69b1df2db40d33f5",
 	"projectname": "London",
-=======
-	"appid": "wxe1d7d4370a4d0976",
-	"projectname": "pinduoduo",
->>>>>>> 34ea51567e51e7e7b861ee3564c32d8de7491090
 	"condition": {
 		"search": {
 			"current": -1,

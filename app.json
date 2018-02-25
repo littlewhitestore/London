@@ -1,5 +1,6 @@
 {
-  "pages":[    
+  "pages":[  
+    "pages/tuan/create_tuan",  
     "pages/home/home",
     "pages/search/search",
     "pages/user/user",
