@@ -237,6 +237,7 @@ Page({
         'Content-Type': 'application/json'
       },
       success: function (res) {
+        console.log(res);
         console.log(res.data.status_code);
         if (res.data.status_code && res.data.status_code == 1) {
 
