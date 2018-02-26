@@ -13,10 +13,10 @@ page{
   font-family: '微软雅黑'
 }
 .theme_color{
-  color: #f33975;
+  color: #FB3F34;
 }
 .theme_bg{
-  background-color: #fe6e1f;
+  background-color: #FB3F34;
 }
 .df{
   display: -webkit-box;

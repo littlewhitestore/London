@@ -801,51 +801,24 @@ Page({
         title: '请选择一个商品',
       })
     }
-    
-    // wx.request({
-    //   url: app.config.host + '/Api/Shopping/add',
-    //   method: 'post',
-    //   data: {
-    //     // uid: app.d.userId,
-    //     session: app.globalData.session,
-    //     pid: that.data.goodsId,
-    //     num: that.data.buynum,
-    //   },
-    //   header: {
-    //     'Content-Type': 'application/x-www-form-urlencoded'
-    //   },
-    //   success: function (res) {
-    //     // //--init data        
-    //     var data = res.data;
-    //     if (data.status == 1) {
-    //       var ptype = e.currentTarget.dataset.type;
-    //       if (ptype == 'buynow') {
-    //         wx.redirectTo({
-    //           url: '../order/pay?cartId=' + data.cart_id
-    //         });
-    //         return;
-    //       } else {
-    //         wx.showToast({
-    //           title: '加入购物车成功',
-    //           icon: 'success',
-    //           duration: 2000
-    //         });
-    //       }
-    //     } else {
-    //       wx.showToast({
-    //         title: data.err,
-    //         duration: 2000
-    //       });
-    //     }
-    //   },
-    //   fail: function () {
-    //     // fail
-    //     wx.showToast({
-    //       title: '网络异常！',
-    //       duration: 2000
-    //     });
-    //   }
-    // });
+  },
+  pintuan: function (e) { //添加到购物车
+    var that = this;
+    if (that.data.currentSku && that.data.currentSku.sku_id) {
+      wx.navigateTo({
+        url: '../order/pay?goodsId=' + that.data.goods_id + "&skuId=" + that.data.currentSku.sku_id
+        + "&num=" + that.data.buynum+"&tuan=true"
+      });
+    } else if (that.data.goods_info.sku_list.length == 1) {
+      wx.navigateTo({
+        url: '../order/pay?goodsId=' + that.data.goods_id + "&skuId=" + that.data.goods_info.sku_list[0].sku_id
+        + "&num=" + 1+"&tuan=true"
+      });
+    } else {
+      wx.showToast({
+        title: '请选择一个商品',
+      })
+    }
   },
   bindChange: function (e) {//滑动切换tab 
     var that = this;

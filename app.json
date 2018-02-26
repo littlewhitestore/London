@@ -1,6 +1,5 @@
 {
   "pages":[  
-    "pages/tuan/create_tuan",  
     "pages/home/home",
     "pages/search/search",
     "pages/user/user",
@@ -18,7 +17,8 @@
     "pages/category/index",     
     "pages/ritual/ritual",   
     "pages/rituall/rituall", 
-    "pages/shop_store/shop_store"
+    "pages/shop_store/shop_store",
+    "pages/tuan/create_tuan"
 
   ],
   "window":{

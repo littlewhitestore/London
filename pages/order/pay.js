@@ -12,11 +12,14 @@ Page({
     total_amount: "",
     amount_payable: "",
     receiver: null,
-    pay_data:null
+    pay_data:null,
+    tuan:false,
+    pintuan_sn:""
   },
   onLoad: function (options) {
     console.log("=======支付页面=========");
-    console.log(!options.hasOwnProperty("goodsId") + "|" + (options.goodsId != ""))
+    console.log(options)
+    this.checkTuan(options)
     if (!options.hasOwnProperty("goodsId") || options.goodsId ==""){
       wx.showModal({
         title: '错误提示',
@@ -52,6 +55,19 @@ Page({
     
     this.loadDataAndSettlement();
   },
+  checkTuan: function (options){
+
+    if (options.hasOwnProperty("tuan")){
+      this.setData({
+        tuan: Boolean(options.tuan)
+      });
+    }
+    if (options.hasOwnProperty("pintuan_sn") && options.pintuan_sn != ""){
+      this.setData({
+        pintuan_sn: options.pintuan_sn
+      });
+    }
+  },
   loadDataAndSettlement: function () {
     var that = this;
     wx.showLoading({
@@ -59,16 +75,17 @@ Page({
       mask: true
     })
     wx.request({
-      url: app.config.host + '/settlement/buynow',
+      url: app.config.host + (that.data.tuan ? "/settlement/pintuan":'/settlement/buynow'),
       method: 'post',
+      
       data: {
         goods_id: that.data.goods_id,
         sku_id: that.data.sku_id,
         number: that.data.buy_number,        
         receiver: that.data.receiver,
         token: app.globalData.token,
-         entry: app.globalData.entry,
-
+        entry: app.globalData.entry,
+        pintuan_sn: that.data.pintuan_sn
       },
       header: {
         'Content-Type': 'application/json'
@@ -122,7 +139,7 @@ Page({
       mask: true
     })
     wx.request({
-      url: app.config.host + '/order/create/buynow' ,
+      url: app.config.host + (that.data.tuan ?"/order/create/pintuan":'/order/create/buynow') ,
       method: 'post',
       data: {
         goods_id: that.data.goods_id,
@@ -130,17 +147,8 @@ Page({
         number: that.data.buy_number,
         receiver: that.data.receiver,
         token: app.globalData.token,
-        entry: app.globalData.entry
-        // receiver: {
-        //   province: "beijing",
-        //   city: "beijing",
-        //   district: "chaoyang",
-        //   address: "3litun",
-        //   name: "xiaobai",
-        //   mobile: "16612345678",
-        //   postalCode: "ddsadsad",
-        //   nationalCode: "086"
-        // }
+        entry: app.globalData.entry,
+        pintuan_sn: that.data.pintuan_sn
 
       },
       header: {
