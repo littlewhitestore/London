@@ -1,0 +1,50 @@
+<!-- /pages/tuan/create_tuan.wxml   -->
+
+<view class='w100 h100'>
+  <view  class='t_goods'>
+    <view class='container_row'>
+      <view class=''>
+        <image        src='https://cbu01.alicdn.com/img/ibank/2017/886/215/5318512688_1132084314.jpg' class='t_img'>
+        </image>
+      </view>
+      <view class='con_t_info'>
+        <view class='t_price'>
+          <image src="../../images/bg_t_pin.png" class='t_price_bg'></image>
+          <text class='pr_title font_14'>拼团立享</text>
+          <text class='t_pr_price'>¥299.99</text>
+        </view>
+        <view class='t_leader_img'>
+          <image src="../../images/bg_mem.png" class='t_bg_menb'></image>
+        </view>
+
+        <view class='t_menb_img'>
+          <image src="../../images/bg_mem.png" class='t_bg_menb'></image>
+        </view>
+        <view class='t_bg_buy'>点击抢购</view>
+        
+      </view>
+
+    </view>
+    <view class='g_name'>
+      <text class='te_left font_14'>商品名称</text>
+      <text class='te_name font_14'>[酒厂自营]古井贡酒年份原浆献礼版本 50年</text>
+      <image src='../../images/icons/more-black.png' class='t_arrow'></image>
+    </view>
+    <view class='line'></view>
+    <view class='g_name'>
+      <text class='te_left font_14'>拼团时间</text>
+      <text class='te_time font_14'>2018/01/24 12:09:32</text>
+    </view>
+     <view class='line'></view>
+    <view class='g_name_'>
+      <text class='te_left font_14'>拼团须知</text>
+      <image src='../../images/icons/ic_p_grey.png' class='p_g m_200'/>
+      <text class ="te_left font_14 m_16">好友参团</text>
+      <image src='../../images/icons/ic_p_grey.png' class='p_g m_80'/>
+      <text class ="te_left font_14 m_16">人满发货</text>
+    </view>
+    
+  </view>
+  <view class='t_info'>
+  </view>
+</view>

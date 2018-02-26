@@ -1,0 +1,162 @@
+/* /pages/tuan/create_tuan.wxss  */
+page{height:100%}
+.t_goods{
+  background-color: #fef8f8;
+  width: 100%;
+  height: 740rpx;
+
+}
+.t_info{
+  width: 100%;
+  height: 470rpx;
+}
+.t_img{
+  width: 428rpx;
+  height: 428rpx;
+  margin-left: 24rpx;
+  margin-top: 24rpx;
+  margin-bottom: 0;
+  
+}
+.container_row{
+  display: flex;
+  flex-direction: row;
+  
+}
+.con_t_info{
+  width: 229rpx;
+  height: 452rpx;
+  margin-left: 46rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+.t_price{
+  flex-basis: 229rpx;
+  position: relative;
+  height: 196rpx;
+  flex-shrink:0;
+  
+}
+.pr_title{
+  position: absolute;
+  top: 30rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align:center;
+  font-weight: 500;
+}
+.t_pr_price{
+  position: absolute;
+  top: 96rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align:center;
+}
+.t_price_bg{
+  
+  width: 229rpx;
+  height: 196rpx;
+  position: absolute;
+}
+.t_leader_img{
+  flex-basis: 78rpx;
+  flex-shrink:0;
+  margin-left: 17rpx;
+}
+.t_menb_img{
+  flex-basis: 70rpx;
+  flex-shrink:0;
+  margin-left: 45rpx;
+}
+.t_bg_buy{
+  flex-basis: 188rpx;
+  flex-shrink:0;
+  height: 60rpx;
+  border: solid 2px #fb3f34;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #fb3f34;
+  text-align: center;
+  line-height: 60rpx;
+  margin-left: 17rpx;
+}
+.t_bg_menb{
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.t_intro{
+  width: 100%;
+  height: 280rpx;
+}
+.line {
+  border-bottom: solid 3rpx #979797;
+  
+} 
+.g_name{
+  
+  margin-top: 24rpx;
+  margin-bottom: 24rpx;
+  margin-left: 24rpx;
+  margin-right: 24rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+}
+.g_name_{
+  display: flex;
+  flex-direction: row;
+  margin-top: 24rpx;
+  margin-bottom: 24rpx;
+  margin-left: 24rpx;
+  margin-right: 24rpx;
+  height: 36rpx;
+ 
+  align-content: center;
+  flex-wrap:nowrap;
+}
+.te_left{
+  color: #979fa7;
+}
+.te_name{
+  display: block;
+  position: relative;
+  left: 150rpx;
+  top: -36rpx;
+  white-space: nowrap;
+  width: 450rpx;
+  text-overflow: ellipsis;
+  overflow:hidden;
+}
+.t_arrow{
+  width: 32rpx;
+  height: 32rpx;
+  position: relative;
+  left: 665rpx;
+  top: -72rpx;
+  
+}
+.te_time{
+  display: block;
+  position: relative;
+  left: 390rpx;
+  top: -36rpx;
+}
+.p_g{
+  height: 16rpx;
+  width: 16rpx;
+  margin-top: 11rpx
+}
+.m_200{
+  margin-left: 200rpx;
+}
+.m_80{
+  margin-left: 80rpx;
+}
+.m_16{
+  margin-left: 16rpx;
+}
+
