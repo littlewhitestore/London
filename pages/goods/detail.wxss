@@ -39,7 +39,7 @@
 .cont {
   width: 100%;
   background: #fff;
-  margin-bottom: 10px;
+  margin-bottom: 94rpx;
 }
 
 .tp_image {
